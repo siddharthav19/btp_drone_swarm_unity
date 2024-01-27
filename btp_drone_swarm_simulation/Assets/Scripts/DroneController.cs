@@ -24,6 +24,8 @@ public class DroneController : MonoBehaviour
         GameObject mainDrone = gameObject;
         drones[0] = mainDrone;
 
+        print("drone created");
+
         for (int i = 1; i <= numberOfDrones - 1; i++)
         {
             GameObject newDrone = Instantiate(dronePrefab, mainDrone.transform.position + new Vector3(i * spacing, 0, 0), Quaternion.identity);
