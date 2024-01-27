@@ -283,9 +283,10 @@ GameObject:
   - component: {fileID: 8845290193486611585}
   - component: {fileID: 6711559545460944971}
   - component: {fileID: 9062020205679189498}
+  - component: {fileID: 1944592884229065961}
   m_Layer: 0
   m_Name: drone
-  m_TagString: Untagged
+  m_TagString: MainDrone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,7 +301,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7674171913462469784}
@@ -379,8 +380,35 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.98646116, y: 0.48904306, z: 2.2380538}
-  m_Center: {x: 0.0070108324, y: 0.00031320006, z: 0.07648116}
+  m_Size: {x: 4.3085117, y: 0.8033154, z: 4.030882}
+  m_Center: {x: -0.8125784, y: -0.4836312, z: -0.84006464}
+--- !u!54 &1944592884229065961
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054379811673952670}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5671432716688277823
 GameObject:
   m_ObjectHideFlags: 0
