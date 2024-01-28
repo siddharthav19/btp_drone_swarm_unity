@@ -9,7 +9,8 @@ public class DroneController : MonoBehaviour
     [SerializeField]
     private int numberOfDrones = 5;
     public float spacing = 5f;
-    public float upwardForce = 500f;
+    public float upwardForce = 1000f;
+    private float highestPosition = 0f;
 
     private GameObject[] drones;
 
@@ -17,7 +18,11 @@ public class DroneController : MonoBehaviour
     {
         createDrones();
         ApplyForceToDrones();
-        
+    }
+
+    private void FixedUpdate()
+    {
+        StopDrones();
     }
 
     private void createDrones()
@@ -52,6 +57,36 @@ public class DroneController : MonoBehaviour
             if (droneRigidbody != null)
             {
                 droneRigidbody.AddForce(Vector3.up * upwardForce, ForceMode.Force);
+            }
+            else
+            {
+                Debug.LogError("Rigidbody component not found on the drone.");
+            }
+        }
+    }
+
+    private void StopDrones()
+    {
+        foreach (GameObject drone in drones)
+        {
+            Rigidbody droneRigidbody = drone.GetComponent<Rigidbody>();
+
+            if (droneRigidbody != null)
+            {
+
+                // Check if the current position is higher than the highest position
+                if (drone.transform.position.y > highestPosition)
+                {
+                    highestPosition = drone.transform.position.y;
+                }
+
+                // Check if the drone is close to its highest position, then apply a counterforce
+                if (drone.transform.position.y == highestPosition)
+                {
+                    float counterGravityForce = droneRigidbody.mass * Mathf.Abs(Physics.gravity.y);
+                    droneRigidbody.AddForce(Vector3.down * counterGravityForce, ForceMode.Force);
+                }
+                
             }
             else
             {
