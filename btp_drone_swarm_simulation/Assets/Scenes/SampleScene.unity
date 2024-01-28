@@ -143,6 +143,7 @@ MonoBehaviour:
   dronePrefab: {fileID: 5054379811673952670, guid: e746f881748d3a147949e70e5c570880, type: 3}
   numberOfDrones: 5
   spacing: 5
+  upwardForce: 500
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +457,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1944592884229065961, guid: e746f881748d3a147949e70e5c570880, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5054379811673952670, guid: e746f881748d3a147949e70e5c570880, type: 3}
       propertyPath: m_Name
       value: MainDrone
